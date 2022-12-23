@@ -1,15 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import LoginPage from './LoginPage';
-import Footer from './components/Footer';
+import React from "react";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import LoginPage from "./LoginPage";
+import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/signin" element={<LoginPage />} />
+        {/*      <Route path="posts" element={<Posts/>}/>
+                    <Route path="login" element={<LoginForm/>}/> 
+          <Route path="*" element={<NotFound />} />*/}
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
