@@ -7,7 +7,9 @@ import logo_png from "./logo.png";
 const LoginSection = () => {
   return (
     <div className="Login">
-      <img src={logo_png} alt="logo" width="30%" />
+      <Link to="/">
+        <img src={logo_png} alt="logo" height="75%" />
+      </Link>
       <text className="Title">Login</text>
       <input type="text" placeholder="Wpisz login" className="Data" />
       <text className="Title">Hasło</text>
