@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
 import RegisterPage from "./RegisterPage";
+import MovieDetailsPage from "./components/MovieDetailsPage";
 import AddMoviePage from "./AddMoviePage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,6 +20,7 @@ root.render(
 
         <Route path="/signup" element={<RegisterPage />} />
 
+        <Route path="/details" element={<MovieDetailsPage />} />
         <Route path="/add" element={<AddMoviePage />} />
         {/*      <Route path="posts" element={<Posts/>}/>
                     <Route path="login" element={<LoginForm/>}/> 

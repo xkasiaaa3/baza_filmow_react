@@ -97,10 +97,12 @@ border-width:1px;
 .AboutMovie{
   font-size: 15px;
   align-self: flex-start;
+  color: black;
 }
 
 .MovieInfo{
 padding:10px;
+color: black;
 align-items: center;
 }
 
