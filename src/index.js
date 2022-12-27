@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
 import RegisterPage from "./RegisterPage";
+import AddMoviePage from "./AddMoviePage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,6 +18,8 @@ root.render(
         <Route path="/signin" element={<LoginPage />} />
 
         <Route path="/signup" element={<RegisterPage />} />
+
+        <Route path="/add" element={<AddMoviePage />} />
         {/*      <Route path="posts" element={<Posts/>}/>
                     <Route path="login" element={<LoginForm/>}/> 
           <Route path="*" element={<NotFound />} />*/}
