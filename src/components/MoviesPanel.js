@@ -18,13 +18,14 @@ const MoviesPanel = () => {
   }, []);
 
   return (
-    <>
+    <div className="AppStyle">
       <div className="MoviesGrid">
         {movieList.map((items) => (
           <MovieCard
             title={items.title}
             content={items.content}
             image={items.image}
+            id={items.id}
           />
         ))}
 
@@ -45,7 +46,7 @@ const MoviesPanel = () => {
           </text>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

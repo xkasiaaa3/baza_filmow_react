@@ -7,7 +7,9 @@ import logo_png from "./logo.png";
 const HeaderSection = () => {
   return (
     <div className="Header">
-      <img src={logo_png} alt="logo" width="20%"></img>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <img src={logo_png} alt="logo" width="60%" />
+      </Link>
       <input type="text" placeholder="Szukaj..." className="SearchBar" />
       <Link to="/signin">
         <button className="SearchButton">Zaloguj</button>

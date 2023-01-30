@@ -9,7 +9,12 @@ const MovieCard = (props) => {
       : props.content.substring(0, 200) + "...";
 
   return (
-    <Link to="/details" style={{ textDecoration: "none" }} className="Card">
+    <Link
+      to="/details"
+      style={{ textDecoration: "none" }}
+      className="Card"
+      state={props.id}
+    >
       <img src={props.image} alt="brak" height={200} width={200} />
       <br />
       <div className="MovieInfo">
