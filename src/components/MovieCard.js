@@ -3,6 +3,11 @@ import "../App.css";
 import { Link } from "react-router-dom";
 
 const MovieCard = (props) => {
+  const desc =
+    props.content.length < 200
+      ? props.content
+      : props.content.substring(0, 200) + "...";
+
   return (
     <Link to="/details" style={{ textDecoration: "none" }} className="Card">
       <img src={props.image} alt="brak" height={200} width={200} />
@@ -10,7 +15,7 @@ const MovieCard = (props) => {
       <div className="MovieInfo">
         <text className="MovieTitle">{props.title}</text>
         <br />
-        <text className="AboutMovie">{props.about}</text>
+        <text className="AboutMovie">{desc}</text>
       </div>
     </Link>
   );
