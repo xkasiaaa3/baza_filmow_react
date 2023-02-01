@@ -8,13 +8,17 @@ import MovieCard from "./MovieCard";
 const MoviesPanel = () => {
   const [movieList, setList] = React.useState([]);
 
-  React.useEffect(() => {
+  const getMovies = () => {
     axios
       .get("https://at.usermd.net/api/movies")
       .then((response) => {
         setList(response.data);
       })
       .catch((err) => console.log(err));
+  };
+
+  React.useEffect(() => {
+    getMovies();
   }, []);
 
   return (
