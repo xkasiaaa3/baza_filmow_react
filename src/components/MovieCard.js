@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 const MovieCard = (props) => {
   const desc =
-    props.content.length < 150
-      ? props.content
-      : props.content.substring(0, 150) + "...";
+    props.content != null
+      ? props.content.length < 150
+        ? props.content
+        : props.content.substring(0, 150) + "..."
+      : null;
 
   return (
     <Link

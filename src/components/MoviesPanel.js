@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
+import { isExpired } from "react-jwt";
 
 import MovieCard from "./MovieCard";
 
@@ -33,22 +34,24 @@ const MoviesPanel = () => {
           />
         ))}
 
-        <Link
-          to="/add"
-          className="Card"
-          style={{ justifyContent: "center", textDecoration: "none" }}
-        >
-          <text
-            style={{
-              fontSize: 100,
-              textAlign: "center",
-              fontWeight: "bold",
-              color: "black",
-            }}
+        {!isExpired(localStorage.getItem("token")) ? (
+          <Link
+            to="/add"
+            className="Card"
+            style={{ justifyContent: "center", textDecoration: "none" }}
           >
-            +
-          </text>
-        </Link>
+            <text
+              style={{
+                fontSize: 100,
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "black",
+              }}
+            >
+              +
+            </text>
+          </Link>
+        ) : null}
       </div>
     </div>
   );

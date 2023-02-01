@@ -68,14 +68,16 @@ const RegisterSection = () => {
         className="Data"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button
-        className="SearchButton"
-        onClick={() => {
-          signUp();
-        }}
-      >
-        Zarejestruj się
-      </button>
+      <Link to="/signin">
+        <button
+          className="SearchButton"
+          onClick={() => {
+            signUp();
+          }}
+        >
+          Zarejestruj się
+        </button>
+      </Link>
       <Link to="/signin">
         <button className="SearchButton">Zaloguj się</button>
       </Link>
