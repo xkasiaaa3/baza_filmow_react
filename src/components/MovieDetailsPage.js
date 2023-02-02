@@ -32,7 +32,12 @@ const MovieDetailsPage = (props) => {
       </div>
       <div
         className="AppStyle"
-        style={{ margin: "40px", justifyContent: "center", display: "flex" }}
+        style={{
+          margin: "40px",
+          justifyContent: "center",
+          display: "flex",
+          height: "80vh",
+        }}
       >
         <div
           style={{
