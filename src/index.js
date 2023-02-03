@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 import RegisterPage from "./RegisterPage";
 import MovieDetailsPage from "./components/MovieDetailsPage";
 import AddMoviePage from "./AddMoviePage";
+import { isExpired } from "react-jwt";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,7 +22,16 @@ root.render(
         <Route path="/signup" element={<RegisterPage />} />
 
         <Route path="/details" element={<MovieDetailsPage />} />
-        <Route path="/add" element={<AddMoviePage />} />
+        <Route
+          path="/add"
+          element={
+            isExpired(localStorage.getItem("token")) ? (
+              <LoginPage />
+            ) : (
+              <AddMoviePage />
+            )
+          }
+        />
         {/*      <Route path="posts" element={<Posts/>}/>
                     <Route path="login" element={<LoginForm/>}/> 
           <Route path="*" element={<NotFound />} />*/}
