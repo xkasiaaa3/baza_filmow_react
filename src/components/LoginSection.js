@@ -7,6 +7,7 @@ import logo_png from "./logo.png";
 const LoginSection = () => {
   const [login, setLogin] = React.useState(null);
   const [password, setPassword] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
   const signIn = () => {
     axios
@@ -20,7 +21,7 @@ const LoginSection = () => {
         console.log(response.data.token);
         window.location.replace("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setError("Nieprawidłowe dane logowania"));
   };
 
   return (
@@ -42,6 +43,7 @@ const LoginSection = () => {
         className="Data"
         onChange={(e) => setPassword(e.target.value)}
       />
+      <text>{error}</text>
       <button
         className="SearchButton"
         onClick={() => {

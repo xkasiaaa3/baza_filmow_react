@@ -9,26 +9,29 @@ const RegisterSection = () => {
   const [login, setLogin] = React.useState(null);
   const [password, setPassword] = React.useState(null);
   const [email, setEmail] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
-  const validate = () => {
-    const errors = {};
+  // const validate = () => {
+  //   const errors = {};
 
-    if (login.trim() === "") {
-      errors.login = "Login is required!";
-    }
-    if (email.trim() === "") {
-      errors.email = "Email is required!";
-    }
-    if (password.trim() === "") {
-      errors.password = "Password is required!";
-    }
+  //   if (login.trim() === "") {
+  //     errors.login = "Login is required!";
+  //   }
+  //   if (email.trim() === "") {
+  //     errors.email = "Email is required!";
+  //   }
+  //   if (password.trim() === "") {
+  //     errors.password = "Password is required!";
+  //   }
 
-    return Object.keys(errors).length === 0 ? null : errors;
-  };
+  //   return Object.keys(errors).length === 0 ? null : errors;
+  // };
 
   const signUp = () => {
-    const errors = validate();
-    if (errors) return;
+    // const errors = validate();
+    // if (errors) {
+    //   return;
+    // }
 
     axios
       .post("https://at.usermd.net/api/user/create", {
@@ -38,8 +41,10 @@ const RegisterSection = () => {
       })
       .then((response) => {
         console.log(response);
+
+        window.location.replace("/signin");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setError("Nieprawidłowe lub niekompletne dane"));
   };
 
   return (
@@ -68,16 +73,16 @@ const RegisterSection = () => {
         className="Data"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Link to="/signin">
-        <button
-          className="SearchButton"
-          onClick={() => {
-            signUp();
-          }}
-        >
-          Zarejestruj się
-        </button>
-      </Link>
+      <text>{error}</text>
+      <button
+        className="SearchButton"
+        onClick={() => {
+          signUp();
+        }}
+      >
+        Zarejestruj się
+      </button>
+
       <Link to="/signin">
         <button className="SearchButton">Zaloguj się</button>
       </Link>
