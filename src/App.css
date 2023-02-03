@@ -37,6 +37,8 @@ background-color: #7a371a;
 
 .AppStyle{
  height:100vh;
+
+ background-color:  rgb(237, 188, 142);
 }
 .Header{
 display:flex;
@@ -49,6 +51,7 @@ border-width: 1px;
 background-color: #f3cfad;
 justify-content: center;
 padding: 5px;
+height: 10vh;
 
 }
 
