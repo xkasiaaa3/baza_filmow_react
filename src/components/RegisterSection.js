@@ -11,28 +11,7 @@ const RegisterSection = () => {
   const [email, setEmail] = React.useState(null);
   const [error, setError] = React.useState(null);
 
-  // const validate = () => {
-  //   const errors = {};
-
-  //   if (login.trim() === "") {
-  //     errors.login = "Login is required!";
-  //   }
-  //   if (email.trim() === "") {
-  //     errors.email = "Email is required!";
-  //   }
-  //   if (password.trim() === "") {
-  //     errors.password = "Password is required!";
-  //   }
-
-  //   return Object.keys(errors).length === 0 ? null : errors;
-  // };
-
   const signUp = () => {
-    // const errors = validate();
-    // if (errors) {
-    //   return;
-    // }
-
     axios
       .post("https://at.usermd.net/api/user/create", {
         name: login,
